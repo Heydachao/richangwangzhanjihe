@@ -1,0 +1,80 @@
+.logon {
+    height:100%;
+    background:url(../img/login_bg.png) repeat-x;background-size:auto 100%;
+    min-width: 1280px;
+}
+.pattern-bg {
+    background: url(../img/pattern_bg_02.png) no-repeat bottom center;
+    background-size: 90% auto;
+    height: 100%;
+    opacity: .3;
+}
+.signup-logon-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -180px;
+    margin-top: -214px;
+    width: 360px;
+}
+.logon-logo {
+    height: 60px;
+    background: url(../img/logon_logo_03.png) no-repeat center center;
+    margin-bottom: 50px;
+}
+.logon-form-wrap {
+    background: #fff;
+    border-radius: 4px;
+    padding: 40px 30px 30px;
+}
+.public input {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 9px 8px;
+    width: 100%;
+}
+.public {
+    margin-bottom: 20px;
+}
+
+.login-btn {
+    padding-top: 19px;
+}
+.login-btn a{
+    display: block;
+}
+.login-btn button {
+    height: 48px;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #eee;
+    background: #ff8549;
+    color: #fff;
+    font-size: 16px;
+}
+.verification-code {
+     border: 1px solid #eee;
+     margin-bottom: 15px;
+}
+.verification-code input {
+    border: none;
+    width: 170px;
+}
+.verification-code span {
+    width: 128px;
+    height: 38px;
+    text-align: center;
+    border-left: 1px solid #eee;
+    cursor: pointer;
+}
+.verification-code span img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.remember-me-checkbox label {
+    color: #666;
+}
+.remember-me-checkbox a {
+    color: #999;
+}

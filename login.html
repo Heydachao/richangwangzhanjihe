@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>logon</title>
+
+    <!-- <link rel="stylesheet" href="css/amazeui.min.css"/> -->
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/less.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="logon">
+        <div class="pattern-bg"> </div>
+        <div class="signup-logon-box" id="signup_logon_box">
+            <div class="logon-logo"></div>
+            <div class="logon-form-wrap" id="logon_form_wrap">
+                <form id="logon_form" method="post" action="postback" class="z-logon-form">
+                    <input type="hidden" name="page" value="" />
+                    <div class="public account-number">
+                        <input type="text" id="username" name="username" placeholder="账号" autofocus="autofocus" autocapitalize="off" autocomplete="on"
+                        />
+                    </div>
+                    <div class="public account-password">
+                        <input type="password" id="password" name="password" placeholder="密码" />
+                    </div>
+                    <div class="public verification-code am-cf">
+                        <input type="text" placeholder="验证码" style="width: 64%;"/>
+                        <!-- <span class="verification-code-txt am-fr">hugw</span> -->
+                        <input type="button" value="免费获取验证码" onclick="settime(this)" style="width: 36%;float: right;margin-right: -18px;"/>
+                    </div>
+                    <div class="remember-me-checkbox am-cf">
+                        <label class="am-checkbox-inline am-warning">
+                            <input type="checkbox" value="" data-am-ucheck> 自动登录
+                        </label>
+                        <a href="#" class="am-fr">无法登录？</a>
+                    </div>
+                    <div class="login-btn">
+                        <a href="index.html">
+                            <button type="button">登录</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+	<script>
+		var countdown=60;
+		function settime(obj) {
+			if (countdown == 0) {
+				obj.removeAttribute("disabled");    
+				obj.value="免费获取验证码"; 
+				countdown = 60; 
+				return;
+			} else {
+				obj.setAttribute("disabled", true); 
+				obj.value="重新发送(" + countdown + ")"; 
+				countdown--; 
+			}
+		setTimeout(function() {
+			settime(obj) }
+			,1000)
+		}
+	
+	</script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/amazeui.min.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
+
+</body>
+
+</html>

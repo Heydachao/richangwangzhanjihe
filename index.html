@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>日常网站集合</title>
+
+	<link rel="stylesheet" href="css/amazeui.min.css" />
+	<link href="css/base.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="overflow: hidden;">
+	<!-- 登陆和时间信息 -->
+	<header>
+		<div class="base-header clearfix">
+			<div class="logo left-float">
+				<span>日常网站集合</span>
+			</div>
+			<div class="login-info">
+				<div class="login-name-box clearfix">
+					<div class="login-name-wrapper">
+						<span class="login-name">欢迎回来，zhou先生</span>
+						<div class="head-time light-gray-color" id="head_time">2016年5月12日 18:16:49</div>
+					</div>
+					<script>
+							function startTime(){
+								var today=new Date();
+								var year = today.getFullYear();       //年  
+								var month = today.getMonth() + 1;     //月  
+								var day = today.getDate();			//日
+								var hours=today.getHours();				//时
+								var minutes=today.getMinutes();			//分
+								var seconds=today.getSeconds();			//秒// 在小于10的数字前加一个‘0’
+								month=checkTime(month);
+								day=checkTime(day);
+								minutes=checkTime(minutes);
+								seconds=checkTime(seconds);
+								document.getElementById('head_time').innerHTML= year +"年 "+ month +"月 "+ day +"日 "+ hours +":"+ minutes +":"+ seconds;
+								t=setTimeout(function(){startTime()},500);
+							}
+							function checkTime(i){
+								if (i<10){
+									i="0" + i;
+								}
+								return i;
+							}
+							startTime();
+						</script>
+					<div class="exit">
+						<a href="login.html" id="" title="退出登录" target="_parent" onclick="return window.confirm('要退出系统吗?');">退出登录</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shadow-box">
+			<div class="shadow-box-inner"></div>
+		</div>
+	</header>
+
+	<div class="page-container">
+		<div class="sidebar-menu">
+			<div class="sidebar-menu-inner">
+				<div class="main-box">
+					<ul class="main-menu" id="main_menu">
+						<li class="level1 level1-bot-line">
+							<a href="javascript:;" class="level1-a work-bench">日常工具
+								<span class="right-arrow"></span>
+							</a>
+							<ul class="level2">
+								<li>
+									<a href="http://www.kuaidi.com/" target="iframecont">快递查询</a>
+								</li>
+								<li>
+									<a href="win10/index.html" target="iframecont">win10模拟</a>
+								</li>
+								<li>
+									<a href="http://www.runoob.com/" target="iframecont">菜鸟教程</a>
+								</li>
+								<li>
+									<a href="http://hao.shejidaren.com/" target="iframecont">设计导航</a>
+								</li>
+								<li>
+									<a href="http://www.bslong.cn/index.html" target="iframecont">在线设计</a>
+								</li>
+							</ul>
+						</li>
+						<li class="level1 level1-bot-line">
+							<a href="javascript:;" class="level1-a work-bench">系统工具
+								<span class="right-arrow"></span>
+							</a>
+							<ul class="level2">
+								<li>
+									<a href="https://wannianrili.51240.com/" target="iframecont">中国日历</a>
+								</li>
+								<li>
+									<a href="https://shenfenzheng.51240.com/" target="iframecont">身份验证</a>
+								</li>
+								<li>
+									<a href="http://map.51240.com/" target="iframecont">中国地图</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-content">
+			<span class="view"></span>
+			<!-- 局部刷新的内容 -->
+			<iframe frameborder="0" id="content_box" name="iframecont" width="100%" src="cont.html"></iframe>
+		</div>
+		
+	</div>
+
+	<div class="am-modal am-modal-no-btn" tabindex="-1" id="your-modal">
+	</div>
+
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<!--<![endif]-->
+
+	<script src="js/amazeui.js"></script>
+
+	<script type="text/javascript" src="js/base.js"></script>
+
+	<script>
+		$('.view').click(function(){
+			$(this).toggleClass('current');
+			$('.sidebar-menu').toggleClass('hide');
+		});
+	</script>
+</body>
+
+</html>
